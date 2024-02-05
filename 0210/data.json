@@ -1,0 +1,70 @@
+{
+	"data": [
+	  {
+		"style": "t-shirt",
+		"color": "blue",
+		"sex": "female",
+		"size": "small"
+	  },
+	  {
+		"style": "t-shirt",
+		"color": "yellow",
+		"sex": "male",
+		"size": "large"
+	  },
+	  {
+		"style": "pants",
+		"color": "pink",
+		"sex": "female",
+		"size": "large"
+	  },
+	  {
+		"style": "skirt",
+		"color": "yellow",
+		"sex": "female",
+		"size": "small"
+	  },
+	  {
+		"style": "pants",
+		"color": "blue",
+		"sex": "male",
+		"size": "small"
+	  },
+	  {
+		"style": "skirt",
+		"color": "yellow",
+		"sex": "male",
+		"size": "large"
+	  },
+	  {
+		"style": "t-shirt",
+		"color": "blue",
+		"sex": "female",
+		"size": "large"
+	  },
+	  {
+		"style": "pants",
+		"color": "pink",
+		"sex": "male",
+		"size": "small"
+	  },
+	  {
+		"style": "skirt",
+		"color": "pink",
+		"sex": "female",
+		"size": "small"
+	  },
+	  {
+		"style": "t-shirt",
+		"color": "pink",
+		"sex": "male",
+		"size": "large"
+	  },
+	  {
+		"style": "pants",
+		"color": "yellow",
+		"sex": "female",
+		"size": "large"
+	  }
+	]
+  }

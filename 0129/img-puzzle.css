@@ -1,0 +1,116 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+ul{
+	list-style: none;
+	margin-top: 1rem;
+	border: 2px solid var(--facebook);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+li{
+	width: 100px;
+	height: 100px;
+	color: #fff;
+	background: url(https://picsum.photos/400/400);
+}
+/*	혼자 해본, 강의와 다른 코드 
+.image-container{
+	display: flex;
+	justify-content: center;
+	width: 400px;
+	height: 400px;
+} */ 
+:root{
+	--facebook: #3b5998;
+}
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.play-time{
+	display: flex;
+	justify-content: center;
+	padding: 3rem;
+	margin-top: 2rem;
+	font-size: 40px;
+	color: var(--facebook);
+}
+.start-button{
+	background:var(--facebook);
+	color: #fff;
+	padding: 1rem 2rem;
+	margin-top: 1rem;
+	border-style: none;
+}
+.game-text{
+	font-size: 48px;
+	color: green;
+}
+.list0{
+	background-position-x: 0px;
+	background-position-y: 0px;
+}
+.list1{
+	background-position-x: -100px;
+	background-position-y: 0px;
+}
+.list2{
+	background-position-x: -200px;
+	background-position-y: 0px;
+}
+.list3{
+	background-position-x: -300px;
+	background-position-y: 0px;
+}
+.list4{
+	background-position-x: 0px;
+	background-position-y: -100px;
+}
+.list5{
+	background-position-x: -100px;
+	background-position-y: -100px;
+}
+.list6{
+	background-position-x: -200px;
+	background-position-y: -100px;
+}
+.list7{
+	background-position-x: -300px;
+	background-position-y: -100px;
+}
+.list8{
+	background-position-x: 0px;
+	background-position-y: -200px;
+}
+.list9{
+	background-position-x: -100px;
+	background-position-y: -200px;
+}
+.list10{
+	background-position-x: -200px;
+	background-position-y: -200px;
+}
+.list11{
+	background-position-x: -300px;
+	background-position-y: -200px;
+}
+.list12{
+	background-position-x: 0px;
+	background-position-y: -300px;
+}
+.list13{
+	background-position-x: -100px;
+	background-position-y: -300px;
+}
+.list14{
+	background-position-x: -200px;
+	background-position-y: -300px;
+}
+.list15{
+	background-position-x: -300px;
+	background-position-y: -300px;
+}

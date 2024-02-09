@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/weather.css">
+	<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+	<title>Weather</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1>날씨검색</h1>
+			<select id="weather-select">
+				<option value="seoul">서울</option>
+				<option value="pyeongtaek">평택</option>
+				<option value="daegu">대구</option>
+				<option value="busan">부산</option>
+			</select>
+		</header>
+		<section class="main-section">
+			<div class="info">
+				<p class="location">서울</p>
+				<p class="temperature">
+					<span>3</span>&deg;C
+				</p>
+				<p class="weather">
+					<img src="https://placeimg.com/50/50/1" alt="1">
+				</p>
+				<p class="detail">
+					<span class="feel-like">체감<span>7&deg;C</span></span>
+					<span class="wind">초속<span>7m/s</span></span>
+				</p>
+			</div>
+			<img id="spinner" src="https://placeimg.com/50/50/2" alt="2">
+		</section>
+	</div>
+	<script src="js/weather.js"></script>
+</body>
+</html>

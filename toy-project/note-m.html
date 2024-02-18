@@ -12,7 +12,7 @@
 	<div class="wrapper">
 		<div class="nav-bar">
 			<div class="search">
-				<input type="text" class="input">
+				<input type="search" class="input" placeholder="제목 검색">
 				<i class="fa-solid fa-magnifying-glass"></i>
 			</div>
 			<div class="setting">
@@ -22,8 +22,8 @@
 			</div>
 		</div>
 		<div class="main-section">
-			<ul>
-				<li>
+			<ul class="note-container">
+				<li draggable="true">
 					<div class="title" id="0" contenteditable="true">뿡</div>
 					<div class="story" id="0" contenteditable="true">
 						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga tenetur dignissimos, nam eveniet, ex at modi omnis, odio totam vel esse labore quas. Tenetur natus tempora earum adipisci dolores enim!
@@ -53,6 +53,7 @@
 		<a href="" class="login">로그인</a>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="main.js"></script>
+	<script src="main.js" type="module"></script>
+	<script src="note.js" type="module"></script>
 </body>
 </html>

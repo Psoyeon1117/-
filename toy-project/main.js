@@ -1,6 +1,6 @@
-//5. 회원가입, 로그인
 //6. 테마 기능 + 화면 구성 선택
-import * as note from "./note.js";
+import * as note from "./note.js"
+import * as sign from "./sign.js"
 
 const noteContainer = document.querySelector(".note-container")
 const plus = document.querySelector(".plus")
@@ -8,6 +8,10 @@ const trashCan = document.querySelector(".delete")
 const input = document.querySelector(".input")
 const title = document.getElementsByClassName("title")
 const notetiles = document.getElementsByTagName("li")
+const profill = document.querySelector(".profill")
+const signLink = document.querySelectorAll("#before > a")
+const signPopup = document.querySelector(".sign-popup")
+const backButton = document.querySelector(".back")
 
 
 //1. 노트 추가 기능
@@ -23,6 +27,7 @@ noteContainer.addEventListener("dragstart", (e) => {
     const obj = e.target;
     note.dragged.el = obj;  //note>dragged 객체에 드래그한 노트의 정보를 입력
     note.dragged.index = [...obj.parentNode.children].indexOf(obj);
+    
 })
 noteContainer.addEventListener("dragover", (e) => {
     e.preventDefault()
@@ -51,4 +56,20 @@ input.addEventListener("input", (e) => {
             notetiles[i].style.display = '';
         }
     }
+})
+
+//5. 회원가입, 로그인
+profill.addEventListener("click",()=>{
+    sign.layoutPopup()
+})
+Array.from(signLink).forEach(i => i.addEventListener('click', (e)=>{
+    signPopup.style.display = "flex"
+    if (e.target.className === "signup"){
+        sign.signup()
+    }else if(e.target.className === "signin"){
+        sign.signin()
+    }
+}))
+backButton.addEventListener("click",()=>{
+    signPopup.style.display = "none"
 })

@@ -7,13 +7,17 @@
   --darkgreen: #374709;
   --green: #759242;
   --white: #f2f2ef;
-  --vanilla: #ede8d3;
+  --vanilla: #f6f3e6;
   --font-sizeM: 22px;
   --font-sizeS: 18px;
 }
 .wrapper {
   height: 100vh;
   background: var(--white);
+}
+p{
+  padding: 0px;
+  margin: 0px;
 }
 a {
   text-decoration: none;
@@ -57,10 +61,13 @@ ul {
   border-radius: 15px;
   padding: 0.5rem;
 }
+.setting{
+  cursor: pointer;
+}
 .layer-popup {
   box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.152);
   background: var(--vanilla);
-  font-size: var(--font-sizeS);
+  font-size: var(--font-sizeM);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -71,11 +78,14 @@ ul {
   top: 4rem;
   right: 1.5rem;
 }
-.after {
+#after {
   display: none;
 }
-.before {
+#before {
   display: none;
+}
+.layer-popup > a:hover{
+  color: var(--green);
 }
 .main-section {
   margin: 20px;
@@ -86,11 +96,50 @@ ul {
   justify-content: center;
   font-size: var(--font-sizeM);
   border-bottom: 1px solid var(--darkgreen);
-  /* min-height: ; */
 }
 .story {
   font-size: var(--font-sizeS);
   color: var(--black);
   width: 100%;
   height: 90%;
+}
+
+.sign-popup{
+  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.152);
+  background: var(--vanilla);
+  font-size: var(--font-sizeM);
+  display: none;
+  align-items:flex-start;
+  flex-direction: column;
+  width: 300px;
+  padding: 3rem 2rem 0px 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sign-popup > div{
+  padding-bottom: 2rem;
+}
+
+input{
+  border: none;
+  background: var(--vanilla);
+  font-size: var(--font-sizeS);
+}
+
+.b{
+  width: 300px;
+  margin-top: 2rem;
+  display: flex;
+  align-self: center;
+  justify-content:space-between;
+  border-top: 1px solid var(--green);
+}
+.b>button{
+  width: 150px;
+  padding: 1rem;
+  background: var(--vanilla);
+  border: none;
 }

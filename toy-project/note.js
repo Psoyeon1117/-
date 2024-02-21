@@ -29,10 +29,14 @@ const generateItem = (classname) => {   //요소를 만드는 함수
 
 
 export const dropFunc = (e) => {
+
     if (e.target ==  "li"){
         dobj = e.target
-    }else{dobj = e.target.parentNode}
+    }else if(e.target.localName == "div"){
+        dobj = e.target.parentNode
+    }else{return}
     //drop.target이 li가 아닐 경우에 대한 if문
+
     if(dragged.el.nextSibling){ //drag조각이 마지막 조각인지 확인하는 곳
         originPlace = dragged.el.nextSibling;
     //drag조각!=마지막 조각이라면, drag조각의 이후조각을 원 위치로 설정한다.
@@ -41,10 +45,14 @@ export const dropFunc = (e) => {
         isLast = true
     }
     const dropindex = [...dobj.parentNode.children].indexOf(dobj)
-    dragged.index < dropindex?dobj.after(dragged.el):dobj.before(dragged.el)
-    //drag조각이 drop조각보다 앞에 있을 경우, drag조각이 drop조각의 뒤로 가도록 함
-    isLast ? originPlace.after(dobj) : originPlace.before(dobj);
-    //drag조각이 마지막이라면, 원 위치의 뒤에 drop조각을 둔다.
+    if(isLast){
+        originPlace.after(dobj)
+        //drag조각이 마지막이라면, 원 위치의 뒤에 drop조각을 둔다.
+    }else{
+        dragged.index < dropindex?dobj.after(dragged.el):dobj.before(dragged.el)
+        //drag조각이 drop조각보다 앞에 있을 경우, drag조각이 drop조각의 뒤로 가도록 함
+    }
+
 }
 
 export const search = (words) => {      //제목을 검색하는 함수

@@ -10,15 +10,15 @@ const title = document.getElementsByClassName("title")
 const notetiles = document.getElementsByTagName("li")
 const profill = document.querySelector(".profill")
 const signLink = document.querySelectorAll("#before > a")
-const signPopup = document.querySelector(".sign-popup")
-const backButton = document.querySelector(".back")
+const signupPopup = document.querySelector("#signup")
+const signinPopup = document.querySelector("#signin")
+const backButton = document.querySelectorAll(".back")
 
 
 //1. 노트 추가 기능
 //+를 누르면 맨 뒤에 노트가 추가된다.
 plus.addEventListener("click", () => {
     note.noteplus(noteContainer)
-    console.log(title)
 })
 
 
@@ -38,8 +38,11 @@ noteContainer.addEventListener("drop", (e) => {
 
 
 //3. 노트 삭제
-trashCan.addEventListener("click", (e) => {
-    noteContainer.addEventListener()
+trashCan.addEventListener("mouseenter", (e) => {
+    const deleteElement = note.dragsetting(e.fromElement)
+    if(deleteElement.localName == 'li'){
+        deleteElement.remove()
+    }else{return}
 })
 
 
@@ -47,7 +50,6 @@ trashCan.addEventListener("click", (e) => {
 input.addEventListener("keyup", (e) => {
     if(e.keyCode === 13){
         note.search(e.target.value)
-        console.log(title)
     }
 })
 input.addEventListener("input", (e) => {
@@ -63,13 +65,15 @@ profill.addEventListener("click",()=>{
     sign.layoutPopup()
 })
 Array.from(signLink).forEach(i => i.addEventListener('click', (e)=>{
-    signPopup.style.display = "flex"
     if (e.target.className === "signup"){
+        signupPopup.style.display = "flex"
         sign.signup()
     }else if(e.target.className === "signin"){
+        signinPopup.style.display = "flex"
         sign.signin()
     }
 }))
-backButton.addEventListener("click",()=>{
-    signPopup.style.display = "none"
-})
+Array.from(backButton).forEach(i => i.addEventListener("click",()=>{
+    signupPopup.style.display = "none"
+    signinPopup.style.display = "none" 
+}))

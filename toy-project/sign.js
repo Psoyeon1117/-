@@ -1,15 +1,24 @@
 const bfsignin = document.querySelector("#before")
 const afsignin = document.querySelector("#after")
-const idInput = document.getElementById("id")
-const passwordInput = document.getElementById("password")
-const signButton = document.querySelector(".sign")
+const idInputUp = document.querySelector(".id")
+const passwordInputUp = document.querySelector(".password")
+const idInputIn = document.querySelector(".signin-id")
+const passwordInputIn = document.querySelector(".signin-password")
+const signUpButton = document.querySelector(".sign-up-button")
+const signInButton = document.querySelector(".sign-in-button")
 const checkPassword = document.querySelector(".checkPassword")
-const signPopup = document.querySelector(".sign-popup")
+const signupPopup = document.querySelector("#signup")
+const signinPopup = document.querySelector("#signin")
+const logout = document.querySelector(".logout")
 let checklogin = false;
 let checkPopup = false
 let status;
 
 export const layoutPopup = () => {
+	logout.addEventListener("click",()=>{
+		checklogin = false
+		status.style.display = "none"
+	})
 	if(checkPopup == false){
 		if(checklogin){ //로그인 O
 			status = afsignin
@@ -26,22 +35,22 @@ export const layoutPopup = () => {
 
 export const signup = () => {
 	let id,password,rpassword;
-	checkPassword.style.display =  "block"
-	signButton.innerText = "회원가입"
-	idInput.addEventListener("input", (e)=>{
+	idInputUp.addEventListener("input", (e)=>{
 		id = e.target.value
 	})
-	passwordInput.addEventListener("input", (e)=>{
+	passwordInputUp.addEventListener("input", (e)=>{
 		password = e.target.value
 	})
 	checkPassword.addEventListener("input", (e)=>{
 		rpassword = e.target.value
 	})
-	signButton.addEventListener("click", () => {
+	signUpButton.addEventListener("click", () => {
 		if(password === rpassword){
 			window.localStorage.setItem('id',id)
 			window.localStorage.setItem('password',password)
-			signPopup.style.display = "none"
+			signupPopup.style.display = "none"
+			checklogin =  true
+			layoutPopup()
 			return;
 		}else{
 			alert("비밀번호가 같지 않습니다.")
@@ -51,24 +60,23 @@ export const signup = () => {
 
 export const signin = () => {
 	let id,password;
-	checkPassword.style.display =  "none"
-	signButton.innerText = "로그인"
 	const saveId = window.localStorage.getItem('id')
 	const savePassword = window.localStorage.getItem('password')
-	idInput.addEventListener("input", (e)=>{
+	idInputIn.addEventListener("input", (e)=>{
 		id = e.target.value
 	})
-	passwordInput.addEventListener("input", (e)=>{
+	passwordInputIn.addEventListener("input", (e)=>{
 		password = e.target.value
 	})
-	signButton.addEventListener("click", () => {
-		if(id==saveId && password==savePassword){
+	signInButton.addEventListener("click", () => {
+		if(id===saveId && password===savePassword){
 			alert("로그인에 성공하였습니다!")
-			signPopup.style.display = "none"
+			signinPopup.style.display = "none"
+			checklogin =  true
+			layoutPopup()
 			return;
 		}else{
 			alert("아이디 또는 비밀번호가 틀렸습니다.")
 		}
 	})
-	
 }

@@ -9,6 +9,16 @@ export const dragged = {
     index: null,
 }
 
+export const dragsetting = (e) => {
+    let drag;
+    if (e ==  "li"){
+        drag = e
+    }else if(e.localName == "div"){
+        drag = e.parentNode
+    }else{return}
+    return drag
+}
+
 export const noteplus = (mainSection) => {  //note를 추가하는 함수
     const li = document.createElement("li")
     const title = generateItem("title")
@@ -30,11 +40,7 @@ const generateItem = (classname) => {   //요소를 만드는 함수
 
 export const dropFunc = (e) => {
 
-    if (e.target ==  "li"){
-        dobj = e.target
-    }else if(e.target.localName == "div"){
-        dobj = e.target.parentNode
-    }else{return}
+    dobj = dragsetting(e.target)
     //drop.target이 li가 아닐 경우에 대한 if문
 
     if(dragged.el.nextSibling){ //drag조각이 마지막 조각인지 확인하는 곳

@@ -9,7 +9,7 @@ export const dragged = {
     index: null,
 }
 
-export const dragsetting = (e) => {
+export const dragsetting = (e) => {     //drag되는 요소를 li로 고정하기 위한 함수
     let drag;
     if (e ==  "li"){
         drag = e

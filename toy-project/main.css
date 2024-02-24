@@ -3,17 +3,46 @@
   padding: 0px;
 }
 :root {
-  --black: #212517;
-  --darkgreen: #374709;
-  --green: #759242;
-  --white: #f2f2ef;
-  --vanilla: #f6f3e6;
+  --font-color: #212517;
+  --base-color: #a9d06a;
+  --background-color: #f2f2ef;
+  --popup-color: #deeacc;
+  --icon-color: #f2f2ef;
+  --icon-size: 30px;
   --font-sizeM: 22px;
   --font-sizeS: 18px;
 }
+[data-theme='yellow']{
+  --font-color: #584534;
+  --icon-color: #957961;
+  --base-color: #F6D776;
+  --background-color: #f2f2ef;
+  --popup-color: #f6f3e6;
+}
+[data-theme='blue']{
+  --font-color: #333A73;
+  --icon-color: #333A73;
+  --base-color: #8ec3e6;
+  --background-color: #FFF6E9;
+  --popup-color: #BBE2EC;
+}
+[data-theme='purple']{
+  --font-color: #392467;
+  --icon-color: #392467;
+  --base-color: #c38ecf;
+  --background-color: #FFF6E9;
+  --popup-color: #FFD1E3;
+}
+[data-theme='black']{
+  --font-color: #F7F7F7;
+  --icon-color: #F7F7F7;
+  --base-color: #393E46;
+  --background-color: #121212;
+  --popup-color: #393E46;
+}
 .wrapper {
   height: 100vh;
-  background: var(--white);
+  background: var(--background-color);
 }
 p{
   padding: 0px;
@@ -21,7 +50,7 @@ p{
 }
 a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--font-color);
 }
 li {
   display: flex;
@@ -32,21 +61,16 @@ li {
   box-shadow: 0px 0px 5px 1px rgba(141, 141, 141, 0.47);
   border-radius: 8px;
 }
-ul {
-  display: grid;
-  padding-left: 0px;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-}
 .fa-solid {
   margin: 0rem 0.5rem;
-  color: var(--white);
-  font-size: var(--font-sizeM);
+  color: var(--icon-color);
+  font-size: var(--icon-size);
 }
 .nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgb(117, 146, 66);
+  background: var(--base-color);
   padding: 0.8rem 1.5rem;
   width: 100%;
 }
@@ -56,7 +80,7 @@ ul {
 .input {
   height: 30px;
   width: 70%;
-  background: var(--white);
+  background: var(--background-color);
   border-style: none;
   border-radius: 15px;
   padding: 0.5rem;
@@ -66,13 +90,13 @@ ul {
 }
 .layer-popup {
   box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.152);
-  background: var(--vanilla);
+  background: var(--popup-color);
   font-size: var(--font-sizeM);
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 1rem;
-  border: 1px solid var(--green);
+  border: 1px solid var(--base-color);
   border-radius: 15px;
   position: absolute;
   top: 4rem;
@@ -85,28 +109,33 @@ ul {
   display: none;
 }
 .layer-popup > a:hover{
-  color: var(--green);
+  color: var(--base-color);
 }
 .main-section {
   margin: 20px;
 }
-
+.note-container{
+  display: grid;
+  padding-left: 0px;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+}
 .title {
   display: flex;
   justify-content: center;
+  color: var(--font-color);
   font-size: var(--font-sizeM);
-  border-bottom: 1px solid var(--darkgreen);
+  border-bottom: 1px solid var(--font-color);
 }
 .story {
   font-size: var(--font-sizeS);
-  color: var(--black);
+  color: var(--font-color);
   width: 100%;
   height: 90%;
 }
 
 .sign-popup{
   box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.152);
-  background: var(--vanilla);
+  background: var(--popup-color);
   font-size: var(--font-sizeM);
   display: flex;
   align-items:flex-start;
@@ -131,7 +160,7 @@ ul {
 
 input{
   border: none;
-  background: var(--vanilla);
+  background: var(--popup-color);
   font-size: var(--font-sizeS);
 }
 
@@ -141,11 +170,25 @@ input{
   display: flex;
   align-self: center;
   justify-content:space-between;
-  border-top: 1px solid var(--green);
+  border-top: 1px solid var(--base-color);
 }
 .b>button{
   width: 150px;
   padding: 1rem;
-  background: var(--vanilla);
+  background: var(--popup-color);
   border: none;
+}
+.tema-popup{
+  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.152);
+  background: var(--popup-color);
+  font-size: var(--font-sizeM);
+  display: none;
+  align-items:center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  position: fixed;
+  top: 170px;
+  right: 3px;
+  transform: translate(0%, -100%);
 }
